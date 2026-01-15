@@ -7,6 +7,7 @@ import {
   Dumbbell, 
   HeartPulse, 
   Move, 
+  Phone,
   Smile, 
   Stethoscope, 
   UserPlus 
@@ -19,16 +20,20 @@ import { ContactForm } from "@/components/ContactForm";
 import { useTestimonials } from "@/hooks/use-testimonials";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
+import heroImage from "@assets/image_1768478782712.png";
+import profileImage from "@assets/image_1768478802896.png";
+import treatmentImage1 from "@assets/image_1768479341847.png";
+import treatmentImage2 from "@assets/image_1768479349112.png";
 
 export default function Home() {
   const { data: testimonials } = useTestimonials();
 
-  // Fallback testimonials if API returns empty or loading
   const displayTestimonials = testimonials && testimonials.length > 0 ? testimonials : [
-    { name: "Aliénor W.", content: "Professionnelle et à l’écoute, beaucoup de douceur et m’a plus aidé en 2 séances que les divers professionnels de santé que j’ai vu ces dernières années.", rating: 5 },
-    { name: "Simon L.", content: "Excellente chiropractrice, attentionnée, à l’écoute et très douée. Après en avoir consulté plusieurs, c’est la première avec laquelle j’obtiens un réel résultat concret.", rating: 5 },
-    { name: "Salomé T.", content: "Louisa est très douce et à l’écoute. Je vous recommande fortement cette praticienne pour vos douleurs et inconforts en tous genres.", rating: 5 },
+    { name: "Alienor W.", content: "Professionnelle et a l'ecoute, beaucoup de douceur et m'a plus aide en 2 seances que les divers professionnels de sante que j'ai vu ces dernieres annees.", rating: 5 },
+    { name: "Simon L.", content: "Excellente chiropractrice, attentionnee, a l'ecoute et tres douee. Apres en avoir consulte plusieurs, c'est la premiere avec laquelle j'obtiens un reel resultat concret.", rating: 5 },
+    { name: "Salome T.", content: "Louisa est tres douce et a l'ecoute. Je vous recommande fortement cette praticienne pour vos douleurs et inconforts en tous genres.", rating: 5 },
   ];
 
   const services = [
@@ -38,19 +43,30 @@ export default function Home() {
     { title: "Sportifs", icon: Dumbbell },
     { title: "Hernie Discale", icon: Activity },
     { title: "Scoliose", icon: Move },
-    { title: "Mâchoire", icon: Smile },
-    { title: "Pédiatrie", icon: Baby },
+    { title: "Machoire", icon: Smile },
+    { title: "Pediatrie", icon: Baby },
     { title: "Mal de Dos", icon: UserPlus },
     { title: "Arthrose", icon: HeartPulse },
   ];
 
   return (
     <div className="min-h-screen bg-background font-body">
+      {/* Phone Banner */}
+      <div className="bg-primary text-white py-3 text-center">
+        <a 
+          href="tel:+33641405602" 
+          className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+          data-testid="link-phone-banner"
+        >
+          <Phone className="w-4 h-4" />
+          <span className="font-medium">Prenez rendez-vous par telephone : +33 6 41 40 56 02</span>
+        </a>
+      </div>
+
       <Navigation />
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/30 rounded-l-[100px] -z-10 hidden lg:block" />
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
 
@@ -64,18 +80,18 @@ export default function Home() {
             >
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent/20 text-accent-foreground text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-accent-foreground mr-2 animate-pulse" />
-                Cabinet ouvert à Toulouse
+                Cabinet ouvert a Toulouse
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-primary leading-tight">
-                Votre santé, notre <br/>
+                Votre sante, notre <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60">
-                  priorité absolue
+                  priorite absolue
                 </span>
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Prenez rendez-vous dès aujourd’hui avec Louisa Peslier-Dauzats dans notre cabinet de chiropraxie. Une approche holistique pour une vie sans douleur.
+                Prenez rendez-vous des aujourd'hui avec Louisa Peslier-Dauzats dans notre cabinet de chiropraxie. Une approche holistique pour une vie sans douleur.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -108,12 +124,10 @@ export default function Home() {
               className="relative"
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                {/* Modern clean medical office stock photo */}
-                {/* <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&auto=format&fit=crop&q=80" alt="Cabinet de chiropraxie Toulouse" /> */}
                 <img 
-                  src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1b98?w=800&auto=format&fit=crop&q=80" 
-                  alt="Cabinet de chiropraxie Toulouse" 
-                  className="w-full h-[500px] object-cover"
+                  src={heroImage} 
+                  alt="Louisa Peslier-Dauzats Chiropracteur Toulouse" 
+                  className="w-full h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
@@ -122,7 +136,6 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Floating Badge */}
               <motion.div 
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -134,8 +147,8 @@ export default function Home() {
                     <Brain className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-primary">Kinésiologie</p>
-                    <p className="text-xs text-muted-foreground">Appliquée Certifiée</p>
+                    <p className="font-bold text-primary">Kinesiologie</p>
+                    <p className="text-xs text-muted-foreground">Appliquee Certifiee</p>
                   </div>
                 </div>
               </motion.div>
@@ -147,22 +160,36 @@ export default function Home() {
       {/* ABOUT SECTION */}
       <section id="about" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Une approche globale et humaine</h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Diplômée de l’Institut Franco Européen de Chiropraxie et certifiée en kinésiologie appliquée professionnelle, 
-              Louisa Peslier-Dauzats recherche et traite la cause de vos douleurs efficacement grâce à une compréhension 
-              globale et holistique du corps. En se basant sur la fonction du système nerveux et du cerveau, 
-              nous soignons l’ensemble du corps.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img 
+                src={profileImage} 
+                alt="Louisa Peslier-Dauzats" 
+                className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
+              />
+            </motion.div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Une approche globale et humaine</h2>
+              <div className="w-20 h-1 bg-primary rounded-full mb-8" />
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Diplomee de l'Institut Franco Europeen de Chiropraxie et certifiee en kinesiologie appliquee professionnelle, 
+                Louisa Peslier-Dauzats recherche et traite la cause de vos douleurs efficacement grace a une comprehension 
+                globale et holistique du corps. En se basant sur la fonction du systeme nerveux et du cerveau, 
+                nous soignons l'ensemble du corps.
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Chiropraxie", desc: "Ajustements précis pour restaurer la mobilité articulaire.", icon: Stethoscope },
-              { title: "Kinésiologie", desc: "Diagnostic précis pour identifier les causes profondes.", icon: Brain },
-              { title: "Prévention", desc: "Conseils et exercices pour une santé durable.", icon: Activity },
+              { title: "Chiropraxie", desc: "Ajustements precis pour restaurer la mobilite articulaire.", icon: Stethoscope },
+              { title: "Kinesiologie", desc: "Diagnostic precis pour identifier les causes profondes.", icon: Brain },
+              { title: "Prevention", desc: "Conseils et exercices pour une sante durable.", icon: Activity },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -181,13 +208,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TREATMENT IMAGES SECTION */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img 
+                src={treatmentImage1} 
+                alt="Consultation chiropracteur" 
+                className="w-full h-80 object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              viewport={{ once: true }}
+              className="rounded-2xl overflow-hidden shadow-lg"
+            >
+              <img 
+                src={treatmentImage2} 
+                alt="Manipulation chiropracteur" 
+                className="w-full h-80 object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES GRID */}
-      <section id="services" className="py-24 bg-white">
+      <section id="services" className="py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
             <div>
               <span className="text-primary font-medium tracking-wider uppercase text-sm">Nos Expertises</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Pathologies Traitées</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Pathologies Traitees</h2>
             </div>
             <Button variant="ghost" className="text-primary hover:text-primary/80 group" asChild>
               <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank">
@@ -215,9 +275,9 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white font-display">Vos Témoignages</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white font-display">Vos Temoignages</h2>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-              La satisfaction de nos patients est notre plus belle réussite.
+              La satisfaction de nos patients est notre plus belle reussite.
             </p>
           </div>
 
@@ -233,7 +293,7 @@ export default function Home() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-accent text-xl">★</span>
+                    <span key={j} className="text-accent text-xl">&#9733;</span>
                   ))}
                 </div>
                 <p className="text-lg italic mb-6 text-white/90 leading-relaxed">"{t.content}"</p>
@@ -254,7 +314,7 @@ export default function Home() {
       {/* FAQ SECTION */}
       <section id="faq" className="py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Questions Fréquentes</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Questions Frequentes</h2>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1" className="border border-border rounded-xl px-6 bg-secondary/10">
@@ -262,8 +322,8 @@ export default function Home() {
                 Comment travaillent nos chiropracteurs ?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                Les chiropracteurs utilisent des ajustements : une technique de manipulation très précise qui permet de redonner la mobilité à une articulation spécifique. 
-                Nous ne nous arrêtons jamais à vos symptômes et recherchons toujours l’origine de vos douleurs.
+                Les chiropracteurs utilisent des ajustements : une technique de manipulation tres precise qui permet de redonner la mobilite a une articulation specifique. 
+                Nous ne nous arretons jamais a vos symptomes et recherchons toujours l'origine de vos douleurs.
               </AccordionContent>
             </AccordionItem>
 
@@ -272,18 +332,18 @@ export default function Home() {
                 Pourquoi consulter un chiropracteur ?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                La chiropraxie traite une variété de problèmes (maux de tête, dos, cou, articulations) et améliore la performance sportive. 
-                Elle a aussi une grande valeur préventive en décelant les troubles avant qu'ils ne deviennent douloureux.
+                La chiropraxie traite une variete de problemes (maux de tete, dos, cou, articulations) et ameliore la performance sportive. 
+                Elle a aussi une grande valeur preventive en decelant les troubles avant qu'ils ne deviennent douloureux.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border border-border rounded-xl px-6 bg-secondary/10">
               <AccordionTrigger className="hover:no-underline py-6 text-lg font-medium text-foreground">
-                Quel est l'intérêt de la kinésiologie appliquée ?
+                Quel est l'interet de la kinesiologie appliquee ?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                C'est une méthode diagnostique qui permet de déterminer plus efficacement et rapidement les origines des symptômes. 
-                Elle aide à identifier les priorités de traitement tout en respectant les limites du corps.
+                C'est une methode diagnostique qui permet de determiner plus efficacement et rapidement les origines des symptomes. 
+                Elle aide a identifier les priorites de traitement tout en respectant les limites du corps.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -298,11 +358,10 @@ export default function Home() {
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Contactez-nous</h2>
                 <p className="text-muted-foreground text-lg">
-                  Une question ? Besoin d'un renseignement ? N'hésitez pas à nous écrire ou à prendre rendez-vous directement en ligne.
+                  Une question ? Besoin d'un renseignement ? N'hesitez pas a nous ecrire ou a prendre rendez-vous directement en ligne.
                 </p>
               </div>
 
-              {/* Map Placeholder - Replace with actual iframe if desired */}
               <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-border">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.366717838573!2d1.4116!3d43.5971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb7d41031359%3A0x6854580234479904!2s2%20Rue%20Jules%20Tellier%2C%2031100%20Toulouse!5e0!3m2!1sen!2sfr!4v1647852345678!5m2!1sen!2sfr" 
@@ -315,16 +374,24 @@ export default function Home() {
                 ></iframe>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-border flex items-center justify-between">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-border flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <p className="font-bold text-primary">Consultations sur RDV</p>
-                  <p className="text-sm text-muted-foreground">Via Doctolib ou par téléphone</p>
+                  <p className="text-sm text-muted-foreground">Via Doctolib ou par telephone</p>
                 </div>
-                <Button asChild>
-                  <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank">
-                    Doctolib
-                  </a>
-                </Button>
+                <div className="flex gap-3 flex-wrap">
+                  <Button asChild variant="outline">
+                    <a href="tel:+33641405602">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Appeler
+                    </a>
+                  </Button>
+                  <Button asChild>
+                    <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank">
+                      Doctolib
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
 
