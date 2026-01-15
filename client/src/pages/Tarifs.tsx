@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function Tarifs() {
   const tarifs = [
     {
-      title: "Premiere consultation adulte",
+      title: "Première consultation adulte",
       price: "60",
       icon: Users,
       description: null
@@ -20,16 +20,16 @@ export default function Tarifs() {
       description: null
     },
     {
-      title: "Premiere consultation enfant",
+      title: "Première consultation enfant",
       price: "50",
       icon: Baby,
-      description: "De la naissance a 14 ans"
+      description: "De la naissance à 14 ans"
     },
     {
       title: "Consultation de suivi enfant",
       price: "45",
       icon: Baby,
-      description: "De la naissance a 14 ans"
+      description: "De la naissance à 14 ans"
     }
   ];
 
@@ -43,7 +43,7 @@ export default function Tarifs() {
           data-testid="link-phone-banner"
         >
           <Phone className="w-4 h-4" />
-          <span className="font-medium">Prenez rendez-vous par telephone : +33 6 41 40 56 02</span>
+          <span className="font-medium">Prenez rendez-vous par téléphone : +33 6 41 40 56 02</span>
         </a>
       </div>
 
@@ -62,7 +62,7 @@ export default function Tarifs() {
               Prix et Tarifs
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Prix d'une consultation de chiropraxie dans notre cabinet a Toulouse. Prenez rendez-vous avec notre chiropracteur des aujourd'hui.
+              Prix d'une consultation de chiropraxie dans notre cabinet à Toulouse. Prenez rendez-vous avec notre chiropracteur dès aujourd'hui.
             </p>
             <Button 
               size="lg" 
@@ -127,10 +127,10 @@ export default function Tarifs() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-primary mb-4">
-                    Remboursement par la securite sociale et mutuelle
+                    Remboursement par la sécurité sociale et mutuelle
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    En France, les seances de chiropraxie sont prises en charge par certaines assurances mutuelles, mais ne sont pas remboursees par la securite sociale. Cependant, cela peut varier d'une assurance a l'autre et il est recommande de verifier aupres de votre assureur pour savoir si les seances de chiropratique sont couvertes dans votre contrat.
+                    En France, les séances de chiropraxie sont prises en charge par certaines assurances mutuelles, mais ne sont pas remboursées par la sécurité sociale. Cependant, cela peut varier d'une assurance à l'autre et il est recommandé de vérifier auprès de votre assureur pour savoir si les séances de chiropratique sont couvertes dans votre contrat.
                   </p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function Tarifs() {
       {/* CTA */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Pret a prendre rendez-vous ?</h2>
+          <h2 className="text-3xl font-bold mb-6">Prêt à prendre rendez-vous ?</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Button 
               size="lg" 

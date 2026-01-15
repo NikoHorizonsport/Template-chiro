@@ -17,9 +17,9 @@ export function Navigation() {
 
   const navLinks = [
     { name: "Accueil", href: "/" },
-    { name: "A Propos", href: "/#about" },
+    { name: "À Propos", href: "/#about" },
     { name: "Pathologies", href: "/#services" },
-    { name: "Seance", href: "/seance" },
+    { name: "Séance", href: "/seance" },
     { name: "Tarifs", href: "/tarifs" },
     { name: "Contact", href: "/#contact" },
   ];

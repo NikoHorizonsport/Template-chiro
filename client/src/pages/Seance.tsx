@@ -11,23 +11,23 @@ export default function Seance() {
   const steps = [
     {
       number: "1",
-      title: "Anamnese et diagnostic",
-      description: "Apres vous avoir questionne sur votre historique et vos douleurs, votre chiropracteur analysera votre posture et realisera une serie de tests specifiques afin de poser un diagnostic pour vous soigner efficacement."
+      title: "Anamnèse et diagnostic",
+      description: "Après vous avoir questionné sur votre historique et vos douleurs, votre chiropracteur analysera votre posture et réalisera une série de tests spécifiques afin de poser un diagnostic pour vous soigner efficacement."
     },
     {
       number: "2", 
       title: "Traitement",
-      description: "Pour le traitement nous utilisons des ajustements articulaires, des techniques de detente musculaire, tendineuse, des fascias et des nerfs. Toujours en fonction de vos besoins."
+      description: "Pour le traitement nous utilisons des ajustements articulaires, des techniques de détente musculaire, tendineuse, des fascias et des nerfs. Toujours en fonction de vos besoins."
     },
     {
       number: "3",
-      title: "Reevaluation",
-      description: "Pour finir nous reevaluerons ensemble les tests realises et votre posture afin d'objectiver les ameliorations."
+      title: "Réévaluation",
+      description: "Pour finir nous réévaluerons ensemble les tests réalisés et votre posture afin d'objectiver les améliorations."
     },
     {
       number: "4",
       title: "Suivi",
-      description: "Une seance de suivi vous sera proposee pour continuer votre traitement si cela est necessaire. Il en existe 2 types : la seance curative et la seance de stabilisation qui vient finir le traitement et qui n'intervient que lorsque vous vous sentez bien, pour faire perdurer cet etat."
+      description: "Une séance de suivi vous sera proposée pour continuer votre traitement si cela est nécessaire. Il en existe 2 types : la séance curative et la séance de stabilisation qui vient finir le traitement et qui n'intervient que lorsque vous vous sentez bien, pour faire perdurer cet état."
     }
   ];
 
@@ -41,7 +41,7 @@ export default function Seance() {
           data-testid="link-phone-banner"
         >
           <Phone className="w-4 h-4" />
-          <span className="font-medium">Prenez rendez-vous par telephone : +33 6 41 40 56 02</span>
+          <span className="font-medium">Prenez rendez-vous par téléphone : +33 6 41 40 56 02</span>
         </a>
       </div>
 
@@ -55,12 +55,12 @@ export default function Seance() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary font-medium tracking-wider uppercase text-sm">Notre methode</span>
+            <span className="text-primary font-medium tracking-wider uppercase text-sm">Notre méthode</span>
             <h1 className="text-4xl md:text-5xl font-bold text-primary mt-4 mb-6">
-              Deroulement d'une seance de chiropraxie
+              Déroulement d'une séance de chiropraxie
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Decouvrez comment se deroule une seance avec nos chiropracteurs a Toulouse. Prenez rendez-vous des aujourd'hui.
+              Découvrez comment se déroule une séance avec nos chiropracteurs à Toulouse. Prenez rendez-vous dès aujourd'hui.
             </p>
             <Button 
               size="lg" 
@@ -80,7 +80,7 @@ export default function Seance() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed text-center">
-              La chiropraxie est une forme de therapie physique qui vise a soulager les douleurs du corps en reajustant les articulations et en corrigeant les dysfonctionnements de la colonne vertebrale et des articulations. Voici comment se deroule generalement une seance de chiropraxie dans notre cabinet a Toulouse :
+              La chiropraxie est une forme de thérapie physique qui vise à soulager les douleurs du corps en réajustant les articulations et en corrigeant les dysfonctionnements de la colonne vertébrale et des articulations. Voici comment se déroule généralement une séance de chiropraxie dans notre cabinet à Toulouse :
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Seance() {
           <div className="max-w-2xl mx-auto bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
             <Activity className="w-10 h-10 text-primary mx-auto mb-4" />
             <p className="text-lg font-medium text-foreground">
-              Il est tres fortement deconseille de pratiquer une activite sportive dans les 48h apres votre seance.
+              Il est très fortement déconseillé de pratiquer une activité sportive dans les 48h après votre séance.
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function Seance() {
       {/* CTA */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Pret a prendre soin de vous ?</h2>
+          <h2 className="text-3xl font-bold mb-6">Prêt à prendre soin de vous ?</h2>
           <Button 
             size="lg" 
             variant="secondary"
