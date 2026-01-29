@@ -64,3 +64,8 @@ Preferred communication style: Simple, everyday language.
 - **Validation**: Zod for schema validation throughout the stack
 - **Date Handling**: date-fns for date formatting
 - **Carousel**: embla-carousel-react for testimonial display
+
+### Spam Protection
+- **Honeypot Field**: Contact form includes a hidden "website" field positioned off-screen
+- **Backend Validation**: Server silently rejects submissions where honeypot field is filled (returns success to not alert bots)
+- **Implementation**: Frontend adds field to form payload, backend checks before processing

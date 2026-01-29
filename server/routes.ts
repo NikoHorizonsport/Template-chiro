@@ -55,6 +55,13 @@ export async function registerRoutes(
 
   app.post(api.inquiries.create.path, async (req, res) => {
     try {
+      // Honeypot spam protection: if 'website' field is filled, it's a bot
+      if (req.body.website && req.body.website.length > 0) {
+        // Silently reject but return success to not alert the bot
+        console.log("Spam submission blocked via honeypot");
+        return res.json({ success: true });
+      }
+      
       const input = api.inquiries.create.input.parse(req.body);
       await storage.createInquiry(input);
       res.json({ success: true });

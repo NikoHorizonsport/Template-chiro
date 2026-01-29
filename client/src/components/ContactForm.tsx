@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
@@ -10,6 +11,7 @@ import { Loader2, Send } from "lucide-react";
 
 export function ContactForm() {
   const mutation = useCreateInquiry();
+  const [honeypot, setHoneypot] = useState("");
   
   const form = useForm<InsertInquiry>({
     resolver: zodResolver(insertInquirySchema),
@@ -22,8 +24,11 @@ export function ContactForm() {
   });
 
   function onSubmit(data: InsertInquiry) {
-    mutation.mutate(data, {
-      onSuccess: () => form.reset(),
+    mutation.mutate({ ...data, website: honeypot }, {
+      onSuccess: () => {
+        form.reset();
+        setHoneypot("");
+      },
     });
   }
 
@@ -33,6 +38,20 @@ export function ContactForm() {
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          {/* Honeypot field - hidden from users, catches bots */}
+          <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}

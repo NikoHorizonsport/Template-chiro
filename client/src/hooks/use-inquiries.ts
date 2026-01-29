@@ -1,12 +1,15 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type InsertInquiry } from "@shared/routes";
+import { api } from "@shared/routes";
+import { type InsertInquiry } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
+
+type InquiryWithHoneypot = InsertInquiry & { website?: string };
 
 export function useCreateInquiry() {
   const { toast } = useToast();
 
   return useMutation({
-    mutationFn: async (data: InsertInquiry) => {
+    mutationFn: async (data: InquiryWithHoneypot) => {
       const res = await fetch(api.inquiries.create.path, {
         method: api.inquiries.create.method,
         headers: { "Content-Type": "application/json" },
