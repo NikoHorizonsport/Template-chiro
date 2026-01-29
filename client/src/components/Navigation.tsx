@@ -28,9 +28,14 @@ export function Navigation() {
     setIsOpen(false);
     if (href.startsWith("/#")) {
       const id = href.replace("/#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+      // If we're not on the home page, navigate there first
+      if (location !== "/") {
+        window.location.href = href;
+      } else {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };
