@@ -33,8 +33,10 @@ export default function Seance() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Phone Banner */}
-      <div className="bg-primary text-white py-3 text-center">
+      <Navigation />
+      
+      {/* Phone Banner - positioned below fixed navigation */}
+      <div className="bg-primary text-white py-3 text-center mt-20">
         <a 
           href="tel:+33641405602" 
           className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
@@ -45,10 +47,8 @@ export default function Seance() {
         </a>
       </div>
 
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary/30">
+      <section className="pt-12 pb-16 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

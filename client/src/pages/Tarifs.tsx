@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Euro, Users, Baby, Info, Phone } from "lucide-react";
+import { Euro, Users, Info, Phone } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,35 +8,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export default function Tarifs() {
   const tarifs = [
     {
-      title: "Première consultation adulte",
+      title: "Première consultation",
       price: "60",
       icon: Users,
       description: null
     },
     {
-      title: "Consultation de suivi adulte",
+      title: "Consultation de suivi",
       price: "55",
       icon: Users,
       description: null
-    },
-    {
-      title: "Première consultation enfant",
-      price: "50",
-      icon: Baby,
-      description: "De la naissance à 14 ans"
-    },
-    {
-      title: "Consultation de suivi enfant",
-      price: "45",
-      icon: Baby,
-      description: "De la naissance à 14 ans"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Phone Banner */}
-      <div className="bg-primary text-white py-3 text-center">
+      <Navigation />
+      
+      {/* Phone Banner - positioned below fixed navigation */}
+      <div className="bg-primary text-white py-3 text-center mt-20">
         <a 
           href="tel:+33641405602" 
           className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
@@ -47,10 +37,8 @@ export default function Tarifs() {
         </a>
       </div>
 
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary/30">
+      <section className="pt-12 pb-16 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +68,7 @@ export default function Tarifs() {
       {/* Pricing Cards */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {tarifs.map((tarif, idx) => (
               <motion.div
                 key={idx}
@@ -108,6 +96,9 @@ export default function Tarifs() {
               </motion.div>
             ))}
           </div>
+          <p className="text-center text-muted-foreground mt-8 max-w-xl mx-auto">
+            Ces tarifs s'appliquent à tous les patients, adultes comme enfants.
+          </p>
         </div>
       </section>
 

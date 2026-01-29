@@ -51,22 +51,22 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-body">
-      {/* Phone Banner */}
-      <div className="bg-primary text-white py-3 text-center">
+      <Navigation />
+      
+      {/* Phone Banner - positioned below fixed navigation */}
+      <div className="bg-primary text-white py-3 text-center mt-20">
         <a 
           href="tel:+33641405602" 
           className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
           <Phone className="w-4 h-4" />
-          <span className="font-medium">Prenez rendez-vous par telephone : +33 6 41 40 56 02</span>
+          <span className="font-medium">Prenez rendez-vous par téléphone : +33 6 41 40 56 02</span>
         </a>
       </div>
 
-      <Navigation />
-
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-12 pb-20 lg:pt-28 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/30 rounded-l-[100px] -z-10 hidden lg:block" />
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
 
