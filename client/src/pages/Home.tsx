@@ -57,11 +57,14 @@ export default function Home() {
       <div className="bg-primary text-white py-3 text-center mt-20">
         <a 
           href="tel:+33641405602" 
-          className="flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+          className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
-          <Phone className="w-4 h-4" />
-          <span className="font-medium">Prenez rendez-vous par téléphone : +33 6 41 40 56 02</span>
+          <span className="flex items-center gap-2 font-medium">
+            <Phone className="w-4 h-4" />
+            <span>Prenez rendez-vous par téléphone :</span>
+          </span>
+          <span className="font-bold">+33 6 41 40 56 02</span>
         </a>
       </div>
 
