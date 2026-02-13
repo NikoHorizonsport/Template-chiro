@@ -69,3 +69,11 @@ Preferred communication style: Simple, everyday language.
 - **Honeypot Field**: Contact form includes a hidden "website" field positioned off-screen
 - **Backend Validation**: Server silently rejects submissions where honeypot field is filled (returns success to not alert bots)
 - **Implementation**: Frontend adds field to form payload, backend checks before processing
+
+### Email Notifications
+- **Service**: Gmail SMTP via nodemailer
+- **Credentials**: GMAIL_USER env var + GMAIL_APP_PASSWORD secret (app password)
+- **Recipient**: chiro.louisadauzats@gmail.com (Louisa's Gmail)
+- **Trigger**: Sent automatically when a contact form inquiry is submitted (after honeypot check passes)
+- **Template**: French, informal tone (tutoiement), includes name, email, phone, message
+- **Error handling**: Email failures are logged but don't block the form submission response

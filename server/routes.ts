@@ -3,6 +3,55 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import nodemailer from "nodemailer";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
+
+async function sendNotificationEmail(inquiry: { name: string; email: string; phone?: string | null; message: string }) {
+  const mailOptions = {
+    from: `"Site Chiropraxie" <${process.env.GMAIL_USER}>`,
+    to: process.env.GMAIL_USER,
+    subject: `Nouveau message de ${inquiry.name}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #0d9488;">Nouveau message depuis ton site</h2>
+        <p>Salut Louisa, tu as recu un nouveau message depuis le formulaire de contact de ton site :</p>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #374151;">Nom</td>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">${inquiry.name}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #374151;">Email</td>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${inquiry.email}">${inquiry.email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #374151;">Telephone</td>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">${inquiry.phone ? `<a href="tel:${inquiry.phone}">${inquiry.phone}</a>` : "Non renseigne"}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb; font-weight: bold; color: #374151;">Message</td>
+            <td style="padding: 10px; border-bottom: 1px solid #e5e7eb;">${inquiry.message}</td>
+          </tr>
+        </table>
+        <p style="color: #6b7280; font-size: 12px;">Ce message a ete envoye automatiquement depuis le site chiropraxie-louisadauzats.fr</p>
+      </div>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("Notification email sent successfully");
+  } catch (error) {
+    console.error("Failed to send notification email:", error);
+  }
+}
 
 async function seedTestimonials() {
   const existing = await storage.getTestimonials();
@@ -64,6 +113,7 @@ export async function registerRoutes(
       
       const input = api.inquiries.create.input.parse(req.body);
       await storage.createInquiry(input);
+      sendNotificationEmail(input).catch(console.error);
       res.json({ success: true });
     } catch (err) {
       if (err instanceof z.ZodError) {
