@@ -13,7 +13,9 @@ import NotFound from "@/pages/not-found";
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, [location]);
   return null;
 }
