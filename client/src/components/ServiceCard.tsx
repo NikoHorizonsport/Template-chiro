@@ -1,10 +1,12 @@
-import { LucideIcon, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+type IconComponent = React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement> & { className?: string }>;
+
 interface ServiceCardProps {
   title: string;
-  icon: LucideIcon;
+  icon: IconComponent;
   slug: string;
   delay?: number;
 }

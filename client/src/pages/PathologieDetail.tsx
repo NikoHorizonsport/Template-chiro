@@ -2,6 +2,7 @@ import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Phone, Calendar, ChevronRight, type LucideIcon } from "lucide-react";
 import { Activity, Baby, Brain, Dumbbell, HeartPulse, Move, Smile, UserPlus } from "lucide-react";
+import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -19,9 +20,11 @@ import imgMalDeDos from "@assets/image_1768479349112.png";
 import imgLombalgie from "@assets/image_1768479349112.png";
 import imgSportifs from "@assets/stock_images/pathologie_sportifs.png";
 
+type IconComponent = React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement> & { className?: string }>;
+
 interface PathologieData {
   title: string;
-  icon: LucideIcon;
+  icon: IconComponent;
   question: string;
   content: string[];
   relatedSlugs: string[];
@@ -32,7 +35,7 @@ interface PathologieData {
 const pathologiesData: Record<string, PathologieData> = {
   sciatique: {
     title: "Sciatique",
-    icon: Activity,
+    icon: SciatiquIcon,
     question: "Qu'est-ce que la sciatique ?",
     content: [
       "Une sciatique est une inflammation du nerf sciatique, qui est le plus long nerf du corps humain. Il peut être pincé, irrité ou adhérer à des structures adjacentes. Les symptômes se caractérisent par des douleurs qui irradient le long de la jambe dans des territoires précis.",

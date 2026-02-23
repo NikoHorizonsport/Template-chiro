@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { 
-  Activity, 
   Baby, 
   Brain, 
   ChevronRight, 
@@ -10,8 +9,10 @@ import {
   Phone,
   Smile, 
   Stethoscope, 
-  UserPlus 
+  UserPlus,
+  Activity 
 } from "lucide-react";
+import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -37,7 +38,7 @@ export default function Home() {
   ];
 
   const services = [
-    { title: "Sciatique", icon: Activity, slug: "sciatique" },
+    { title: "Sciatique", icon: SciatiquIcon, slug: "sciatique" },
     { title: "Femmes Enceintes", icon: Baby, slug: "femmes-enceintes" },
     { title: "Cervicales", icon: Brain, slug: "cervicales" },
     { title: "Sportifs", icon: Dumbbell, slug: "sportifs" },
