@@ -10,7 +10,7 @@ export const ArthroseIcon = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGEleme
       className={className}
       {...props}
     >
-      <image href={arthroseImg} x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+      <image href={arthroseImg} x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet" style={{ mixBlendMode: "multiply" }} />
     </svg>
   )
 );

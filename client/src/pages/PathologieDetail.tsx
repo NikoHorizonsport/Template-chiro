@@ -7,6 +7,7 @@ import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
 import { ArthroseIcon } from "@/components/icons/ArthroseIcon";
 import { ScolioseIcon } from "@/components/icons/ScolioseIcon";
+import { MalDeDosIcon } from "@/components/icons/MalDeDosIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -136,7 +137,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   "mal-de-dos": {
     title: "Mal de Dos",
-    icon: UserPlus,
+    icon: MalDeDosIcon,
     question: "Qu'est-ce que le mal de dos ?",
     content: [
       "Le mal de dos décrit une douleur ou une gêne dans la région lombaire ou thoracique de la colonne vertébrale. Il peut être causé par une variété de facteurs tels que des mouvements répétitifs, des blessures, des maladies, des troubles musculo-squelettiques, des troubles de la colonne vertébrale tels que la scoliose, hernie discale, la lombalgie, ou même des facteurs psychologiques.",

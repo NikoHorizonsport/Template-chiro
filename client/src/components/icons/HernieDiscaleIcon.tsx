@@ -10,7 +10,7 @@ export const HernieDiscaleIcon = forwardRef<SVGSVGElement, React.SVGProps<SVGSVG
       className={className}
       {...props}
     >
-      <image href={hernieImg} x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+      <image href={hernieImg} x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet" style={{ mixBlendMode: "multiply" }} />
     </svg>
   )
 );

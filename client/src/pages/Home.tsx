@@ -17,6 +17,7 @@ import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
 import { ArthroseIcon } from "@/components/icons/ArthroseIcon";
 import { ScolioseIcon } from "@/components/icons/ScolioseIcon";
+import { MalDeDosIcon } from "@/components/icons/MalDeDosIcon";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -50,7 +51,7 @@ export default function Home() {
     { title: "Scoliose", icon: ScolioseIcon, slug: "scoliose" },
     { title: "Machoire", icon: Smile, slug: "machoire" },
     { title: "Pediatrie", icon: Baby, slug: "pediatrie" },
-    { title: "Mal de Dos", icon: UserPlus, slug: "mal-de-dos" },
+    { title: "Mal de Dos", icon: MalDeDosIcon, slug: "mal-de-dos" },
     { title: "Lombalgie", icon: Activity, slug: "lombalgie" },
     { title: "Arthrose", icon: ArthroseIcon, slug: "arthrose" },
   ];
