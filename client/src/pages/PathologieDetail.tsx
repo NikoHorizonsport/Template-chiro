@@ -8,6 +8,7 @@ import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
 import { ArthroseIcon } from "@/components/icons/ArthroseIcon";
 import { ScolioseIcon } from "@/components/icons/ScolioseIcon";
 import { MalDeDosIcon } from "@/components/icons/MalDeDosIcon";
+import { LombalgieIcon } from "@/components/icons/LombalgieIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -149,7 +150,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   lombalgie: {
     title: "Lombalgie",
-    icon: Activity,
+    icon: LombalgieIcon,
     question: "Qu'est-ce que la lombalgie ?",
     content: [
       "La lombalgie est une douleur qui survient dans la région lombaire et qui peut affecter le bas du dos. Elle peut être causée par une mauvaise posture, des mouvements répétitifs, des blessures ou des problèmes médicaux chroniques. Les symptômes incluent une douleur sourde et aiguë, des raideurs et des spasmes musculaires, des engourdissements et des fourmillements.",
