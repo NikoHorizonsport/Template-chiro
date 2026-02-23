@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import sciatiquImg from "@assets/Icone_sciatique_1771862626366.png";
+import sciatiquImg from "@assets/Icone_sciatique_1771863963469.png";
 
 export const SciatiquIcon = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
   ({ className, ...props }, ref) => (
