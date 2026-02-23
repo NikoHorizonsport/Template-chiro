@@ -5,6 +5,8 @@ import { Activity, Baby, Brain, Dumbbell, HeartPulse, Move, Smile, UserPlus } fr
 import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
 import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
+import { ArthroseIcon } from "@/components/icons/ArthroseIcon";
+import { ScolioseIcon } from "@/components/icons/ScolioseIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -49,7 +51,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   arthrose: {
     title: "Arthrose",
-    icon: HeartPulse,
+    icon: ArthroseIcon,
     question: "Qu'est-ce que l'arthrose ?",
     content: [
       "L'arthrose est une dégénérescence articulaire qui touche de plus en plus de personnes à mesure que l'on prend de l'âge. Cependant elle évolue par phase : les phases mécaniques qui vont causer beaucoup d'inconfort et d'enraidissement et les phases inflammatoires qui causent des gonflements, de la chaleur et de la douleur.",
@@ -97,7 +99,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   scoliose: {
     title: "Scoliose",
-    icon: Move,
+    icon: ScolioseIcon,
     question: "Qu'est-ce que la scoliose ?",
     content: [
       "La scoliose est une déformation de la colonne vertébrale qui peut causer de la douleur, de la fatigue et des problèmes de posture.",

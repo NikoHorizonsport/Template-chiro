@@ -15,6 +15,8 @@ import {
 import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
 import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
+import { ArthroseIcon } from "@/components/icons/ArthroseIcon";
+import { ScolioseIcon } from "@/components/icons/ScolioseIcon";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -45,12 +47,12 @@ export default function Home() {
     { title: "Cervicales", icon: CervicalesIcon, slug: "cervicales" },
     { title: "Sportifs", icon: Dumbbell, slug: "sportifs" },
     { title: "Hernie Discale", icon: HernieDiscaleIcon, slug: "hernie-discale" },
-    { title: "Scoliose", icon: Move, slug: "scoliose" },
+    { title: "Scoliose", icon: ScolioseIcon, slug: "scoliose" },
     { title: "Machoire", icon: Smile, slug: "machoire" },
     { title: "Pediatrie", icon: Baby, slug: "pediatrie" },
     { title: "Mal de Dos", icon: UserPlus, slug: "mal-de-dos" },
     { title: "Lombalgie", icon: Activity, slug: "lombalgie" },
-    { title: "Arthrose", icon: HeartPulse, slug: "arthrose" },
+    { title: "Arthrose", icon: ArthroseIcon, slug: "arthrose" },
   ];
 
   return (
