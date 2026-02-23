@@ -4,6 +4,7 @@ import { ArrowLeft, Phone, Calendar, ChevronRight, type LucideIcon } from "lucid
 import { Activity, Baby, Brain, Dumbbell, HeartPulse, Move, Smile, UserPlus } from "lucide-react";
 import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
 import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
+import { HernieDiscaleIcon } from "@/components/icons/HernieDiscaleIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -84,7 +85,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   "hernie-discale": {
     title: "Hernie Discale",
-    icon: Activity,
+    icon: HernieDiscaleIcon,
     question: "Qu'est-ce qu'une hernie discale ?",
     content: [
       "Une hernie discale est une pathologie du disque intervertébral. Certaines fibres périphériques sont lésées et la partie la plus molle contenue à l'intérieur peut trouver un passage vers la périphérie. Cela s'observe sur les imageries médicales sous forme d'une boursoufflure.",
