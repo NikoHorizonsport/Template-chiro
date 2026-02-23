@@ -37,16 +37,17 @@ export default function Home() {
   ];
 
   const services = [
-    { title: "Sciatique", icon: Activity },
-    { title: "Femmes Enceintes", icon: Baby },
-    { title: "Cervicales", icon: Brain },
-    { title: "Sportifs", icon: Dumbbell },
-    { title: "Hernie Discale", icon: Activity },
-    { title: "Scoliose", icon: Move },
-    { title: "Machoire", icon: Smile },
-    { title: "Pediatrie", icon: Baby },
-    { title: "Mal de Dos", icon: UserPlus },
-    { title: "Arthrose", icon: HeartPulse },
+    { title: "Sciatique", icon: Activity, slug: "sciatique" },
+    { title: "Femmes Enceintes", icon: Baby, slug: "femmes-enceintes" },
+    { title: "Cervicales", icon: Brain, slug: "cervicales" },
+    { title: "Sportifs", icon: Dumbbell, slug: "sportifs" },
+    { title: "Hernie Discale", icon: Activity, slug: "hernie-discale" },
+    { title: "Scoliose", icon: Move, slug: "scoliose" },
+    { title: "Machoire", icon: Smile, slug: "machoire" },
+    { title: "Pediatrie", icon: Baby, slug: "pediatrie" },
+    { title: "Mal de Dos", icon: UserPlus, slug: "mal-de-dos" },
+    { title: "Lombalgie", icon: Activity, slug: "lombalgie" },
+    { title: "Arthrose", icon: HeartPulse, slug: "arthrose" },
   ];
 
   return (
@@ -264,7 +265,8 @@ export default function Home() {
               <ServiceCard 
                 key={idx} 
                 title={service.title} 
-                icon={service.icon} 
+                icon={service.icon}
+                slug={service.slug}
                 delay={idx * 0.05}
               />
             ))}

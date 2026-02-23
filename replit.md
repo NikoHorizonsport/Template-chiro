@@ -2,7 +2,14 @@
 
 ## Overview
 
-A professional website for a chiropractor practice based in Toulouse, France. The application serves as a business presence site featuring service information, testimonials, pricing, appointment booking integration, and a contact form for patient inquiries. Built as a full-stack TypeScript application with React frontend and Express backend.
+A professional website for a chiropractor practice based in Toulouse, France. The application serves as a business presence site featuring service information, testimonials, pricing, appointment booking integration, pathology detail pages, and a contact form for patient inquiries. Built as a full-stack TypeScript application with React frontend and Express backend.
+
+### Pathology Detail Pages
+- **Route**: `/pathologie/:slug` (e.g., `/pathologie/sciatique`)
+- **Content**: Each pathology has a dedicated page with detailed text, CTA buttons, and related pathologies
+- **Pathologies**: sciatique, arthrose, cervicales, femmes-enceintes, hernie-discale, scoliose, machoire, pediatrie, mal-de-dos, lombalgie, sportifs
+- **Navigation**: Cards on home page link to detail pages; detail pages link back to home and to related pathologies
+- **Animations**: Cards have hover lift effect, icon color transition, and "En savoir plus" reveal; detail pages use framer-motion entrance animations
 
 ## User Preferences
 
