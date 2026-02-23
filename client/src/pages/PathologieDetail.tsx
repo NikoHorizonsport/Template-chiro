@@ -7,14 +7,14 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import NotFound from "@/pages/not-found";
 
-import imgSciatique from "@assets/stock_images/pathologie_sciatique.png";
+import imgSciatique from "@assets/Sciatique_1771861119224.png";
 import imgArthrose from "@assets/stock_images/pathologie_arthrose.jpg";
 import imgCervicales from "@assets/image_1768479341847.png";
 import imgFemmesEnceintes from "@assets/stock_images/pathologie_femmes_enceintes.jpg";
 import imgHernieDiscale from "@assets/stock_images/pathologie_hernie_discale.jpg";
 import imgScoliose from "@assets/stock_images/pathologie_scoliose.jpg";
-import imgMachoire from "@assets/stock_images/pathologie_machoire.jpg";
-import imgPediatrie from "@assets/stock_images/pathologie_pediatrie.png";
+import imgMachoire from "@assets/Machoire_1771861119206.png";
+import imgPediatrie from "@assets/Pédiatrie_1771861119223.png";
 import imgMalDeDos from "@assets/image_1768479349112.png";
 import imgLombalgie from "@assets/image_1768479349112.png";
 import imgSportifs from "@assets/stock_images/pathologie_sportifs.png";
