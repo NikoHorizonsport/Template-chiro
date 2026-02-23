@@ -40,9 +40,16 @@ export function ServiceCard({ title, icon: Icon, slug, delay = 0 }: ServiceCardP
             Traitement spécialisé et accompagnement personnalisé pour soulager durablement vos douleurs.
           </p>
 
-          <span className="inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+          <span className="inline-flex items-center gap-1 text-sm font-medium text-primary md:opacity-0 md:translate-y-2 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
             En savoir plus
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="md:hidden"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </motion.span>
+            <ChevronRight className="w-4 h-4 hidden md:inline-block group-hover:translate-x-1 transition-transform" />
           </span>
         </div>
       </Link>
