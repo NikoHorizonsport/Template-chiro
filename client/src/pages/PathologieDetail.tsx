@@ -7,12 +7,26 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import NotFound from "@/pages/not-found";
 
+import imgSciatique from "@assets/stock_images/pathologie_sciatique.png";
+import imgArthrose from "@assets/stock_images/pathologie_arthrose.jpg";
+import imgCervicales from "@assets/image_1768479341847.png";
+import imgFemmesEnceintes from "@assets/stock_images/pathologie_femmes_enceintes.jpg";
+import imgHernieDiscale from "@assets/stock_images/pathologie_hernie_discale.jpg";
+import imgScoliose from "@assets/stock_images/pathologie_scoliose.jpg";
+import imgMachoire from "@assets/stock_images/pathologie_machoire.jpg";
+import imgPediatrie from "@assets/stock_images/pathologie_pediatrie.png";
+import imgMalDeDos from "@assets/image_1768479349112.png";
+import imgLombalgie from "@assets/image_1768479349112.png";
+import imgSportifs from "@assets/stock_images/pathologie_sportifs.png";
+
 interface PathologieData {
   title: string;
   icon: LucideIcon;
   question: string;
   content: string[];
   relatedSlugs: string[];
+  image: string;
+  imageAlt: string;
 }
 
 const pathologiesData: Record<string, PathologieData> = {
@@ -25,6 +39,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Nos chiropracteurs à Toulouse sont des professionnels de la santé qui s'intéressent au diagnostic, au traitement et à la prévention des troubles du système nerveux et de la colonne vertébrale, comme la sciatique.",
     ],
     relatedSlugs: ["hernie-discale", "lombalgie", "mal-de-dos"],
+    image: imgSciatique,
+    imageAlt: "Traitement chiropratique de la sciatique - manipulation du bas du dos",
   },
   arthrose: {
     title: "Arthrose",
@@ -35,6 +51,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "L'arthrose est une usure naturelle qui affecte les articulations, causant de la douleur et de la raideur. Nos chiropracteurs à Toulouse aident les patients souffrant d'arthrose à retrouver mobilité et confort grâce à des techniques adaptées.",
     ],
     relatedSlugs: ["mal-de-dos", "cervicales", "lombalgie"],
+    image: imgArthrose,
+    imageAlt: "Douleur articulaire liée à l'arthrose - prise en charge chiropratique",
   },
   cervicales: {
     title: "Cervicales",
@@ -45,6 +63,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Nos chiropracteurs à Toulouse aident les patients atteints de cervicalgie de plusieurs manières, en utilisant des techniques d'ajustement précises pour restaurer la mobilité cervicale et soulager les douleurs.",
     ],
     relatedSlugs: ["mal-de-dos", "hernie-discale", "machoire"],
+    image: imgCervicales,
+    imageAlt: "Consultation chiropratique pour les douleurs cervicales",
   },
   "femmes-enceintes": {
     title: "Femmes Enceintes",
@@ -55,6 +75,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Pendant la grossesse le corps s'adapte de différentes manières, nos chiropracteurs à Toulouse vous aideront à vous adapter pour passer au mieux toutes les étapes afin de pouvoir profiter au mieux de ce moment de votre vie.",
     ],
     relatedSlugs: ["lombalgie", "sciatique", "mal-de-dos"],
+    image: imgFemmesEnceintes,
+    imageAlt: "Accompagnement chiropratique pendant la grossesse",
   },
   "hernie-discale": {
     title: "Hernie Discale",
@@ -65,6 +87,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Celle-ci peut venir appuyer sur toutes les structures adjacentes et créer des douleurs ou des inconforts en fonction de sa localisation et de sa taille. Une pression sur un nerf causera une sciatique, une cruralgie ou une névralgie cervico-brachiale. Une pression sur un ligament créera une douleur locale avec des limitations d'amplitude.",
     ],
     relatedSlugs: ["sciatique", "lombalgie", "cervicales"],
+    image: imgHernieDiscale,
+    imageAlt: "Douleurs de dos liées à une hernie discale",
   },
   scoliose: {
     title: "Scoliose",
@@ -76,6 +100,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Les symptômes de la scoliose peuvent inclure une asymétrie de la poitrine ou des épaules, une inclinaison de la hanche ou une déviation de la colonne vertébrale visible.",
     ],
     relatedSlugs: ["mal-de-dos", "lombalgie", "cervicales"],
+    image: imgScoliose,
+    imageAlt: "Examen de la colonne vertébrale pour la scoliose",
   },
   machoire: {
     title: "Mâchoire",
@@ -86,6 +112,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Le chiropraticien est un professionnel de la santé qui s'intéresse au diagnostic, au traitement et à la prévention des troubles du système neuro-musculosquelettique, y compris pour les patients qui souffrent de la mâchoire.",
     ],
     relatedSlugs: ["cervicales", "mal-de-dos", "sportifs"],
+    image: imgMachoire,
+    imageAlt: "Traitement des troubles de la mâchoire et des cervicales",
   },
   pediatrie: {
     title: "Pédiatrie",
@@ -96,6 +124,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Nos chiropracteurs pédiatriques à Toulouse sont particulièrement utiles pour aider les enfants en cas de maux de tête, douleurs de croissance, troubles du sommeil, troubles de l'apprentissage, freins restrictifs buccaux, etc.",
     ],
     relatedSlugs: ["scoliose", "cervicales", "sportifs"],
+    image: imgPediatrie,
+    imageAlt: "Chiropratique pédiatrique - traitement doux pour les enfants",
   },
   "mal-de-dos": {
     title: "Mal de Dos",
@@ -106,6 +136,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Il peut être accompagné de symptômes tels que des raideurs, des spasmes musculaires, des engourdissements et des fourmillements. Les chiropracteurs à Toulouse vous aident à identifier la cause et à traiter efficacement vos douleurs de dos.",
     ],
     relatedSlugs: ["lombalgie", "hernie-discale", "sciatique"],
+    image: imgMalDeDos,
+    imageAlt: "Manipulation chiropratique pour le mal de dos",
   },
   lombalgie: {
     title: "Lombalgie",
@@ -116,6 +148,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Les chiropracteurs sont des professionnels de la santé qui traitent les maux de dos et d'autres troubles neuro-musculosquelettiques par l'ajustement manuel de la colonne vertébrale. Ils sont une alternative aux traitements médicamenteux pour la lombalgie.",
     ],
     relatedSlugs: ["mal-de-dos", "sciatique", "hernie-discale"],
+    image: imgLombalgie,
+    imageAlt: "Traitement chiropratique de la lombalgie - manipulation du bas du dos",
   },
   sportifs: {
     title: "Sportifs",
@@ -126,6 +160,8 @@ const pathologiesData: Record<string, PathologieData> = {
       "Les chiropracteurs du sport utilisent des techniques manuelles pour traiter les entorses, tendinites, maux de dos, et les douleurs articulaires, ainsi que pour prévenir les blessures et améliorer les performances sportives.",
     ],
     relatedSlugs: ["sciatique", "mal-de-dos", "arthrose"],
+    image: imgSportifs,
+    imageAlt: "Chiropratique sportive - traitement des blessures liées au sport",
   },
 };
 
@@ -202,6 +238,25 @@ export default function PathologieDetail() {
               </p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg"
+          >
+            <img
+              src={data.image}
+              alt={data.imageAlt}
+              className="w-full h-64 sm:h-80 md:h-96 object-cover"
+              data-testid="img-pathologie"
+            />
+          </motion.div>
         </div>
       </section>
 
