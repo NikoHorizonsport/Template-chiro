@@ -248,7 +248,7 @@ export default function Home() {
       {/* SERVICES GRID */}
       <section id="services" className="py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-4 text-center md:text-left">
             <div>
               <span className="text-primary font-medium tracking-wider uppercase text-sm">Nos Expertises</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Pathologies Traitees</h2>
