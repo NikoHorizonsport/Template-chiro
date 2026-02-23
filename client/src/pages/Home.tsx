@@ -13,6 +13,7 @@ import {
   Activity 
 } from "lucide-react";
 import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
+import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
@@ -40,7 +41,7 @@ export default function Home() {
   const services = [
     { title: "Sciatique", icon: SciatiquIcon, slug: "sciatique" },
     { title: "Femmes Enceintes", icon: Baby, slug: "femmes-enceintes" },
-    { title: "Cervicales", icon: Brain, slug: "cervicales" },
+    { title: "Cervicales", icon: CervicalesIcon, slug: "cervicales" },
     { title: "Sportifs", icon: Dumbbell, slug: "sportifs" },
     { title: "Hernie Discale", icon: Activity, slug: "hernie-discale" },
     { title: "Scoliose", icon: Move, slug: "scoliose" },

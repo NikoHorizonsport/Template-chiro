@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Phone, Calendar, ChevronRight, type LucideIcon } from "lucide-react";
 import { Activity, Baby, Brain, Dumbbell, HeartPulse, Move, Smile, UserPlus } from "lucide-react";
 import { SciatiquIcon } from "@/components/icons/SciatiquIcon";
+import { CervicalesIcon } from "@/components/icons/CervicalesIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -59,7 +60,7 @@ const pathologiesData: Record<string, PathologieData> = {
   },
   cervicales: {
     title: "Cervicales",
-    icon: Brain,
+    icon: CervicalesIcon,
     question: "Qu'est-ce que la cervicalgie ?",
     content: [
       "La cervicalgie est une douleur de la région du cou qui peut être causée par de nombreux facteurs, tels que des mouvements brusques, de mauvaises postures, des tensions musculaires, des blessures, des accidents, des traumatismes, des entorses cervicales, ou encore un coup du lapin.",
