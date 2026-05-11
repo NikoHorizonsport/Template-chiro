@@ -3,6 +3,7 @@ import { CheckCircle, Clock, Stethoscope, Activity, Phone } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/config/site";
 
 import treatmentImage1 from "@assets/image_1768479341847.png";
 import treatmentImage2 from "@assets/image_1768479349112.png";
@@ -15,7 +16,7 @@ export default function Seance() {
       description: "Après vous avoir questionné sur votre historique et vos douleurs, votre chiropracteur analysera votre posture et réalisera une série de tests spécifiques afin de poser un diagnostic pour vous soigner efficacement."
     },
     {
-      number: "2", 
+      number: "2",
       title: "Traitement",
       description: "Pour le traitement nous utilisons des ajustements articulaires, des techniques de détente musculaire, tendineuse, des fascias et des nerfs. Toujours en fonction de vos besoins."
     },
@@ -34,11 +35,11 @@ export default function Seance() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
-      {/* Phone Banner - positioned below fixed navigation */}
+
+      {/* Phone Banner */}
       <div className="bg-primary text-white py-3 text-center mt-20">
-        <a 
-          href="tel:+33641405602" 
+        <a
+          href={SITE.practice.phoneHref}
           className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
@@ -46,7 +47,7 @@ export default function Seance() {
             <Phone className="w-4 h-4" />
             <span>Prenez rendez-vous par téléphone :</span>
           </span>
-          <span className="font-bold">+33 6 41 40 56 02</span>
+          <span className="font-bold">{SITE.practice.phoneDisplay}</span>
         </a>
       </div>
 
@@ -63,14 +64,14 @@ export default function Seance() {
               Déroulement d'une séance de chiropraxie
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Découvrez comment se déroule une séance avec nos chiropracteurs à Toulouse. Prenez rendez-vous dès aujourd'hui.
+              Découvrez comment se déroule une séance avec nos chiropracteurs à {SITE.practice.city}. Prenez rendez-vous dès aujourd'hui.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="rounded-full"
               asChild
             >
-              <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank" rel="noopener noreferrer">
+              <a href={SITE.practice.bookingUrl} target="_blank" rel="noopener noreferrer">
                 Prendre Rendez-vous
               </a>
             </Button>
@@ -83,7 +84,7 @@ export default function Seance() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground leading-relaxed text-center">
-              La chiropraxie est une forme de thérapie physique qui vise à soulager les douleurs du corps en réajustant les articulations et en corrigeant les dysfonctionnements de la colonne vertébrale et des articulations. Voici comment se déroule généralement une séance de chiropraxie dans notre cabinet à Toulouse :
+              La chiropraxie est une forme de thérapie physique qui vise à soulager les douleurs du corps en réajustant les articulations et en corrigeant les dysfonctionnements de la colonne vertébrale et des articulations. Voici comment se déroule généralement une séance de chiropraxie dans notre cabinet à {SITE.practice.city} :
             </p>
           </div>
         </div>
@@ -125,9 +126,9 @@ export default function Seance() {
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden shadow-lg"
             >
-              <img 
-                src={treatmentImage1} 
-                alt="Consultation chiropracteur" 
+              <img
+                src={treatmentImage1}
+                alt="Consultation chiropracteur"
                 className="w-full h-80 object-cover"
               />
             </motion.div>
@@ -138,9 +139,9 @@ export default function Seance() {
               viewport={{ once: true }}
               className="rounded-2xl overflow-hidden shadow-lg"
             >
-              <img 
-                src={treatmentImage2} 
-                alt="Manipulation chiropracteur" 
+              <img
+                src={treatmentImage2}
+                alt="Manipulation chiropracteur"
                 className="w-full h-80 object-cover"
               />
             </motion.div>
@@ -164,13 +165,13 @@ export default function Seance() {
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Prêt à prendre soin de vous ?</h2>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             variant="secondary"
             className="rounded-full"
             asChild
           >
-            <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank" rel="noopener noreferrer">
+            <a href={SITE.practice.bookingUrl} target="_blank" rel="noopener noreferrer">
               Prendre Rendez-vous
             </a>
           </Button>

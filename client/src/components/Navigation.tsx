@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/config/site";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,10 +50,10 @@ export function Navigation() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex flex-col">
           <span className="text-xl md:text-2xl font-bold font-display text-primary tracking-tight">
-            Louisa Peslier-Dauzats
+            {SITE.practitioner.name}
           </span>
           <span className="text-xs md:text-sm text-muted-foreground font-medium uppercase tracking-wider">
-            Chiropracteur Toulouse
+            {SITE.practitioner.shortTitle} {SITE.practice.city}
           </span>
         </Link>
 
@@ -77,9 +78,9 @@ export function Navigation() {
             asChild
             className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
           >
-            <a 
-              href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" 
-              target="_blank" 
+            <a
+              href={SITE.practice.bookingUrl}
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
             >
@@ -127,9 +128,9 @@ export function Navigation() {
               ))}
               <hr className="my-2 border-border" />
               <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white rounded-xl py-6">
-                <a 
-                  href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" 
-                  target="_blank" 
+                <a
+                  href={SITE.practice.bookingUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
                 >

@@ -12,6 +12,7 @@ import { LombalgieIcon } from "@/components/icons/LombalgieIcon";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/config/site";
 import NotFound from "@/pages/not-found";
 
 import imgSciatique from "@assets/Sciatique_1771861119224.png";
@@ -45,7 +46,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Qu'est-ce que la sciatique ?",
     content: [
       "Une sciatique est une inflammation du nerf sciatique, qui est le plus long nerf du corps humain. Il peut être pincé, irrité ou adhérer à des structures adjacentes. Les symptômes se caractérisent par des douleurs qui irradient le long de la jambe dans des territoires précis.",
-      "Nos chiropracteurs à Toulouse sont des professionnels de la santé qui s'intéressent au diagnostic, au traitement et à la prévention des troubles du système nerveux et de la colonne vertébrale, comme la sciatique.",
+      "Nos chiropracteurs à [Ville] sont des professionnels de la santé qui s'intéressent au diagnostic, au traitement et à la prévention des troubles du système nerveux et de la colonne vertébrale, comme la sciatique.",
     ],
     relatedSlugs: ["hernie-discale", "lombalgie", "mal-de-dos"],
     image: imgSciatique,
@@ -57,7 +58,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Qu'est-ce que l'arthrose ?",
     content: [
       "L'arthrose est une dégénérescence articulaire qui touche de plus en plus de personnes à mesure que l'on prend de l'âge. Cependant elle évolue par phase : les phases mécaniques qui vont causer beaucoup d'inconfort et d'enraidissement et les phases inflammatoires qui causent des gonflements, de la chaleur et de la douleur.",
-      "L'arthrose est une usure naturelle qui affecte les articulations, causant de la douleur et de la raideur. Nos chiropracteurs à Toulouse aident les patients souffrant d'arthrose à retrouver mobilité et confort grâce à des techniques adaptées.",
+      "L'arthrose est une usure naturelle qui affecte les articulations, causant de la douleur et de la raideur. Nos chiropracteurs à [Ville] aident les patients souffrant d'arthrose à retrouver mobilité et confort grâce à des techniques adaptées.",
     ],
     relatedSlugs: ["mal-de-dos", "cervicales", "lombalgie"],
     image: imgArthrose,
@@ -69,7 +70,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Qu'est-ce que la cervicalgie ?",
     content: [
       "La cervicalgie est une douleur de la région du cou qui peut être causée par de nombreux facteurs, tels que des mouvements brusques, de mauvaises postures, des tensions musculaires, des blessures, des accidents, des traumatismes, des entorses cervicales, ou encore un coup du lapin.",
-      "Nos chiropracteurs à Toulouse aident les patients atteints de cervicalgie de plusieurs manières, en utilisant des techniques d'ajustement précises pour restaurer la mobilité cervicale et soulager les douleurs.",
+      "Nos chiropracteurs à [Ville] aident les patients atteints de cervicalgie de plusieurs manières, en utilisant des techniques d'ajustement précises pour restaurer la mobilité cervicale et soulager les douleurs.",
     ],
     relatedSlugs: ["mal-de-dos", "hernie-discale", "machoire"],
     image: imgCervicales,
@@ -81,7 +82,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Pourquoi consulter un chiropracteur pendant la grossesse ?",
     content: [
       "Le chiropracteur est un professionnel de la santé qui s'intéresse aux causes des douleurs en prenant en compte l'ensemble du corps. Il s'efforce de maintenir une bonne santé en réajustant la colonne vertébrale afin de permettre au système nerveux de fonctionner de manière optimale.",
-      "Pendant la grossesse le corps s'adapte de différentes manières, nos chiropracteurs à Toulouse vous aideront à vous adapter pour passer au mieux toutes les étapes afin de pouvoir profiter au mieux de ce moment de votre vie.",
+      "Pendant la grossesse le corps s'adapte de différentes manières, nos chiropracteurs à [Ville] vous aideront à vous adapter pour passer au mieux toutes les étapes afin de pouvoir profiter au mieux de ce moment de votre vie.",
     ],
     relatedSlugs: ["lombalgie", "sciatique", "mal-de-dos"],
     image: imgFemmesEnceintes,
@@ -130,7 +131,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Qu'est-ce que la chiropratique pédiatrique ?",
     content: [
       "La chiropraxie pédiatrique vise à diagnostiquer, prévenir et traiter les troubles musculo-squelettiques et nerveux chez les enfants.",
-      "Nos chiropracteurs pédiatriques à Toulouse sont particulièrement utiles pour aider les enfants en cas de maux de tête, douleurs de croissance, troubles du sommeil, troubles de l'apprentissage, freins restrictifs buccaux, etc.",
+      "Nos chiropracteurs pédiatriques à [Ville] sont particulièrement utiles pour aider les enfants en cas de maux de tête, douleurs de croissance, troubles du sommeil, troubles de l'apprentissage, freins restrictifs buccaux, etc.",
     ],
     relatedSlugs: ["scoliose", "cervicales", "sportifs"],
     image: imgPediatrie,
@@ -142,7 +143,7 @@ const pathologiesData: Record<string, PathologieData> = {
     question: "Qu'est-ce que le mal de dos ?",
     content: [
       "Le mal de dos décrit une douleur ou une gêne dans la région lombaire ou thoracique de la colonne vertébrale. Il peut être causé par une variété de facteurs tels que des mouvements répétitifs, des blessures, des maladies, des troubles musculo-squelettiques, des troubles de la colonne vertébrale tels que la scoliose, hernie discale, la lombalgie, ou même des facteurs psychologiques.",
-      "Il peut être accompagné de symptômes tels que des raideurs, des spasmes musculaires, des engourdissements et des fourmillements. Les chiropracteurs à Toulouse vous aident à identifier la cause et à traiter efficacement vos douleurs de dos.",
+      "Il peut être accompagné de symptômes tels que des raideurs, des spasmes musculaires, des engourdissements et des fourmillements. Les chiropracteurs à [Ville] vous aident à identifier la cause et à traiter efficacement vos douleurs de dos.",
     ],
     relatedSlugs: ["lombalgie", "hernie-discale", "sciatique"],
     image: imgMalDeDos,
@@ -194,7 +195,7 @@ export default function PathologieDetail() {
 
       <div className="bg-primary text-white py-3 text-center mt-20">
         <a
-          href="tel:+33641405602"
+          href={SITE.practice.phoneHref}
           className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
@@ -202,7 +203,7 @@ export default function PathologieDetail() {
             <Phone className="w-4 h-4" />
             <span>Prenez rendez-vous par téléphone :</span>
           </span>
-          <span className="font-bold">+33 6 41 40 56 02</span>
+          <span className="font-bold">{SITE.practice.phoneDisplay}</span>
         </a>
       </div>
 
@@ -243,7 +244,7 @@ export default function PathologieDetail() {
                 {data.title}
               </h1>
               <p className="text-lg text-muted-foreground mt-2">
-                Chiropracteur à Toulouse — Louisa Peslier-Dauzats
+                {SITE.practitioner.shortTitle} à {SITE.practice.city} — {SITE.practitioner.name}
               </p>
             </motion.div>
           </div>
@@ -311,7 +312,7 @@ export default function PathologieDetail() {
               Vous souffrez de {data.title.toLowerCase()} ?
             </h2>
             <p className="text-white/80 mb-8 text-lg">
-              Prenez rendez-vous avec Louisa Peslier-Dauzats pour un diagnostic personnalisé et un traitement adapté.
+              Prenez rendez-vous avec {SITE.practitioner.name} pour un diagnostic personnalisé et un traitement adapté.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -321,7 +322,7 @@ export default function PathologieDetail() {
                 asChild
               >
                 <a
-                  href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats"
+                  href={SITE.practice.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="button-doctolib-pathologie"
@@ -336,7 +337,7 @@ export default function PathologieDetail() {
                 className="rounded-full border-white/30 text-white"
                 asChild
               >
-                <a href="tel:+33641405602" data-testid="button-phone-pathologie">
+                <a href={SITE.practice.phoneHref} data-testid="button-phone-pathologie">
                   <Phone className="w-5 h-5 mr-2" />
                   Appeler le cabinet
                 </a>

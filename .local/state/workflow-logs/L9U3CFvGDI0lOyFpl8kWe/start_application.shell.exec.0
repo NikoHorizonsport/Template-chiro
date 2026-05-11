@@ -1,0 +1,9 @@
+[1G[0K⠙[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠙[1G[0K1:59:08 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+1:59:17 PM [express] GET /api/testimonials 200 in 15ms :: [{"id":1,"name":"Aliénor W.","content":"Professionnelle et à l’écoute, beaucoup de douceur et m’a plus aidé en 2 séances que les divers professionnels de santé que j’ai vu ces dernières années. Je recommande les yeux fermés!","rating":5,"isApproved":true},{"id":2,"name":"Simon L.","content":"Excellente chiropractrice, attentionnée, à l’écoute et très douée. Après en avoir consulté plusieurs, c’est la première avec laquelle j’obtiens un réel résultat concret.","rating":5,"isApproved":true},{"id":3,"name":"Salomé T.","content":"Louisa est très douce et à l’écoute. Je vous recommande fortement cette praticienne pour vos douleurs et inconforts en tous genres, la prise en charge est globale et personnalisée, avec beaucoup d’empathie.","rating":5,"isApproved":true},{"id":4,"name":"Yacoub S.","content":"Madame Peslier-Dauzats est une praticienne extraordinaire. Elle est douce dans ses manipulations, elle les explique de manière très claire et compréhensible. Depuis que je suis passé chez elle, tout a changé pour moi. J’arrive à faire du sport sans me faire mal.","rating":5,"isApproved":true},{"id":5,"name":"Jean-François L.","content":"Madame Louisa Peslier-Dauzats, est une chiropracteur très agréable a chacune de nos séances j’ai senti une amélioration significative. Sa technique est douce et sans douleur, c’est aussi une praticienne qui prend le temps de vous écouter et de trouver des solutions efficaces.","rating":5,"isApproved":true}]

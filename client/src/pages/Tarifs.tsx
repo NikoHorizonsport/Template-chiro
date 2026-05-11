@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SITE } from "@/config/site";
 
 export default function Tarifs() {
   const tarifs = [
@@ -24,11 +25,11 @@ export default function Tarifs() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
-      {/* Phone Banner - positioned below fixed navigation */}
+
+      {/* Phone Banner */}
       <div className="bg-primary text-white py-3 text-center mt-20">
-        <a 
-          href="tel:+33641405602" 
+        <a
+          href={SITE.practice.phoneHref}
           className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
@@ -36,7 +37,7 @@ export default function Tarifs() {
             <Phone className="w-4 h-4" />
             <span>Prenez rendez-vous par téléphone :</span>
           </span>
-          <span className="font-bold">+33 6 41 40 56 02</span>
+          <span className="font-bold">{SITE.practice.phoneDisplay}</span>
         </a>
       </div>
 
@@ -53,14 +54,14 @@ export default function Tarifs() {
               Prix et Tarifs
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Prix d'une consultation de chiropraxie dans notre cabinet à Toulouse. Prenez rendez-vous avec notre chiropracteur dès aujourd'hui.
+              Prix d'une consultation de chiropraxie dans notre cabinet à {SITE.practice.city}. Prenez rendez-vous avec notre chiropracteur dès aujourd'hui.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="rounded-full"
               asChild
             >
-              <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank" rel="noopener noreferrer">
+              <a href={SITE.practice.bookingUrl} target="_blank" rel="noopener noreferrer">
                 Prendre Rendez-vous
               </a>
             </Button>
@@ -138,25 +139,25 @@ export default function Tarifs() {
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Prêt à prendre rendez-vous ?</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="secondary"
               className="rounded-full"
               asChild
             >
-              <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank" rel="noopener noreferrer">
-                Doctolib
+              <a href={SITE.practice.bookingUrl} target="_blank" rel="noopener noreferrer">
+                Prendre RDV en ligne
               </a>
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="rounded-full border-white text-white hover:bg-white/10"
               asChild
             >
-              <a href="tel:+33641405602">
+              <a href={SITE.practice.phoneHref}>
                 <Phone className="w-4 h-4 mr-2" />
-                +33 6 41 40 56 02
+                {SITE.practice.phoneDisplay}
               </a>
             </Button>
           </div>

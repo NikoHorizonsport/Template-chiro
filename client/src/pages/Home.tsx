@@ -26,6 +26,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ContactForm } from "@/components/ContactForm";
 import { useTestimonials } from "@/hooks/use-testimonials";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/config/site";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
@@ -37,11 +38,7 @@ import treatmentImage2 from "@assets/image_1768479349112.png";
 export default function Home() {
   const { data: testimonials } = useTestimonials();
 
-  const displayTestimonials = testimonials && testimonials.length > 0 ? testimonials : [
-    { name: "Alienor W.", content: "Professionnelle et a l'ecoute, beaucoup de douceur et m'a plus aide en 2 seances que les divers professionnels de sante que j'ai vu ces dernieres annees.", rating: 5 },
-    { name: "Simon L.", content: "Excellente chiropractrice, attentionnee, a l'ecoute et tres douee. Apres en avoir consulte plusieurs, c'est la premiere avec laquelle j'obtiens un reel resultat concret.", rating: 5 },
-    { name: "Salome T.", content: "Louisa est tres douce et a l'ecoute. Je vous recommande fortement cette praticienne pour vos douleurs et inconforts en tous genres.", rating: 5 },
-  ];
+  const displayTestimonials = testimonials && testimonials.length > 0 ? testimonials : SITE.testimonials;
 
   const services = [
     { title: "Sciatique", icon: SciatiquIcon, slug: "sciatique" },
@@ -63,8 +60,8 @@ export default function Home() {
       
       {/* Phone Banner - positioned below fixed navigation */}
       <div className="bg-primary text-white py-3 text-center mt-20">
-        <a 
-          href="tel:+33641405602" 
+        <a
+          href={SITE.practice.phoneHref}
           className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 hover:opacity-90 transition-opacity"
           data-testid="link-phone-banner"
         >
@@ -72,7 +69,7 @@ export default function Home() {
             <Phone className="w-4 h-4" />
             <span>Prenez rendez-vous par téléphone :</span>
           </span>
-          <span className="font-bold">+33 6 41 40 56 02</span>
+          <span className="font-bold">{SITE.practice.phoneDisplay}</span>
         </a>
       </div>
 
@@ -91,7 +88,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent/20 text-accent-foreground text-sm font-medium">
                 <span className="w-2 h-2 rounded-full bg-accent-foreground mr-2 animate-pulse" />
-                Cabinet ouvert a Toulouse
+                Cabinet ouvert à {SITE.practice.city}
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-primary leading-tight">
@@ -102,7 +99,7 @@ export default function Home() {
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Prenez rendez-vous des aujourd'hui avec Louisa Peslier-Dauzats dans notre cabinet de chiropraxie. Une approche holistique pour une vie sans douleur.
+                Prenez rendez-vous dès aujourd'hui avec {SITE.practitioner.name} dans notre cabinet de chiropraxie. Une approche holistique pour une vie sans douleur.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -111,7 +108,7 @@ export default function Home() {
                   className="rounded-full text-lg h-14 px-8 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 hover:-translate-y-1 transition-all"
                   asChild
                 >
-                  <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank" rel="noopener noreferrer">
+                  <a href={SITE.practice.bookingUrl} target="_blank" rel="noopener noreferrer">
                     Prendre Rendez-vous
                   </a>
                 </Button>
@@ -137,13 +134,13 @@ export default function Home() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <img 
                   src={heroImage} 
-                  alt="Louisa Peslier-Dauzats Chiropracteur Toulouse" 
+                  alt={`${SITE.practitioner.name} ${SITE.practitioner.shortTitle} ${SITE.practice.city}`}
                   className="w-full h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
-                  <p className="font-bold text-lg">Louisa Peslier-Dauzats</p>
-                  <p className="text-sm opacity-90">Chiropracteur D.C.</p>
+                  <p className="font-bold text-lg">{SITE.practitioner.name}</p>
+                  <p className="text-sm opacity-90">{SITE.practitioner.title}</p>
                 </div>
               </div>
               
@@ -180,7 +177,7 @@ export default function Home() {
             >
               <img 
                 src={profileImage} 
-                alt="Louisa Peslier-Dauzats" 
+                alt={SITE.practitioner.name} 
                 className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
               />
             </motion.div>
@@ -188,9 +185,8 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Une approche globale et humaine</h2>
               <div className="w-20 h-1 bg-primary rounded-full mb-8" />
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Diplomee de l'Institut Franco Europeen de Chiropraxie et certifiee en kinesiologie appliquee professionnelle, 
-                Louisa Peslier-Dauzats recherche et traite la cause de vos douleurs efficacement grace a une comprehension 
-                globale et holistique du corps. En se basant sur la fonction du systeme nerveux et du cerveau, 
+                {SITE.practitioner.credentials}, {SITE.practitioner.name} recherche et traite la cause de vos douleurs efficacement grâce à une compréhension
+                globale et holistique du corps. En se basant sur la fonction du système nerveux et du cerveau,
                 nous soignons l'ensemble du corps.
               </p>
             </div>
@@ -261,7 +257,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Pathologies Traitees</h2>
             </div>
             <Button variant="ghost" className="text-primary hover:text-primary/80 group" asChild>
-              <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank">
+              <a href={SITE.practice.bookingUrl} target="_blank">
                 Prendre rendez-vous <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -375,15 +371,21 @@ export default function Home() {
               </div>
 
               <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-border">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.366717838573!2d1.4116!3d43.5971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb7d41031359%3A0x6854580234479904!2s2%20Rue%20Jules%20Tellier%2C%2031100%20Toulouse!5e0!3m2!1sen!2sfr!4v1647852345678!5m2!1sen!2sfr" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                {SITE.practice.mapsEmbedUrl ? (
+                  <iframe
+                    src={SITE.practice.mapsEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-secondary/30 flex items-center justify-center text-muted-foreground text-sm">
+                    Google Maps — à configurer dans site.ts
+                  </div>
+                )}
               </div>
 
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-border flex flex-wrap items-center justify-between gap-4">
@@ -393,14 +395,14 @@ export default function Home() {
                 </div>
                 <div className="flex gap-3 flex-wrap">
                   <Button asChild variant="outline">
-                    <a href="tel:+33641405602">
+                    <a href={SITE.practice.phoneHref}>
                       <Phone className="w-4 h-4 mr-2" />
                       Appeler
                     </a>
                   </Button>
                   <Button asChild>
-                    <a href="https://www.doctolib.fr/chiropracteur/toulouse/louisa-peslier-dauzats" target="_blank">
-                      Doctolib
+                    <a href={SITE.practice.bookingUrl} target="_blank">
+                      Prendre RDV
                     </a>
                   </Button>
                 </div>
