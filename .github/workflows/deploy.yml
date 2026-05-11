@@ -35,9 +35,9 @@ jobs:
         run: npx vite build
         env:
           NODE_ENV: production
-          # Si tu as un domaine personnalisé → remplace par VITE_BASE=/
-          # Si tu utilises nikohorizonsport.github.io/Template-chiro → garde /Template-chiro/
-          VITE_BASE: /Template-chiro/
+          # Domaine personnalisé (CNAME) → base = /
+          # Si tu utilises nikohorizonsport.github.io/Template-chiro sans CNAME → /Template-chiro/
+          VITE_BASE: /
 
       - name: SPA routing — copy index.html as 404.html
         run: cp dist/public/index.html dist/public/404.html
