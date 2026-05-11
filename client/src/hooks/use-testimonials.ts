@@ -1,14 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import { SITE } from "@/config/site";
 import type { Testimonial } from "@shared/schema";
 
 export function useTestimonials() {
-  return useQuery<Testimonial[]>({
-    queryKey: [api.testimonials.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.testimonials.list.path);
-      if (!res.ok) throw new Error("Failed to fetch testimonials");
-      return await res.json();
-    },
-  });
+  const data: Testimonial[] = SITE.testimonials.map((t, i) => ({
+    id: i + 1,
+    name: t.name,
+    content: t.content,
+    rating: t.rating,
+    isApproved: true,
+  }));
+
+  return { data };
 }

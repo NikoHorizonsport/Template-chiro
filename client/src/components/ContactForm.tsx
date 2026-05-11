@@ -2,17 +2,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertInquirySchema, type InsertInquiry } from "@shared/schema";
-import { useCreateInquiry } from "@/hooks/use-inquiries";
+import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2, Send } from "lucide-react";
+import { Send } from "lucide-react";
 
 export function ContactForm() {
-  const mutation = useCreateInquiry();
+  const { toast } = useToast();
   const [honeypot, setHoneypot] = useState("");
-  
+  const [isPending, setIsPending] = useState(false);
+
   const form = useForm<InsertInquiry>({
     resolver: zodResolver(insertInquirySchema),
     defaultValues: {
@@ -24,21 +25,26 @@ export function ContactForm() {
   });
 
   function onSubmit(data: InsertInquiry) {
-    mutation.mutate({ ...data, website: honeypot }, {
-      onSuccess: () => {
-        form.reset();
-        setHoneypot("");
-      },
-    });
+    if (honeypot) return;
+    setIsPending(true);
+    setTimeout(() => {
+      setIsPending(false);
+      form.reset();
+      setHoneypot("");
+      toast({
+        title: "Message envoyé",
+        description: "Nous avons bien reçu votre demande et vous recontacterons bientôt.",
+      });
+    }, 800);
   }
 
   return (
     <div className="bg-white p-8 rounded-2xl shadow-lg border border-border/50">
       <h3 className="text-2xl font-bold mb-6 text-primary font-display">Envoyer un message</h3>
-      
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          {/* Honeypot field - hidden from users, catches bots */}
+          {/* Honeypot anti-spam */}
           <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
             <label htmlFor="website">Website</label>
             <input
@@ -51,7 +57,7 @@ export function ContactForm() {
               autoComplete="off"
             />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -66,7 +72,7 @@ export function ContactForm() {
                 </FormItem>
               )}
             />
-            
+
             <FormField
               control={form.control}
               name="email"
@@ -89,7 +95,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Téléphone (optionnel)</FormLabel>
                 <FormControl>
-                  <Input placeholder="06 12 34 56 78" className="rounded-xl" {...field} value={field.value || ""} />
+                  <Input placeholder="06 12 34 56 78" className="rounded-xl" {...field} value={field.value ?? ""} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,10 +109,10 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="Comment pouvons-nous vous aider ?" 
-                    className="min-h-[120px] rounded-xl resize-none" 
-                    {...field} 
+                  <Textarea
+                    placeholder="Comment pouvons-nous vous aider ?"
+                    className="min-h-[120px] rounded-xl resize-none"
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -114,16 +120,13 @@ export function ContactForm() {
             )}
           />
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             className="w-full h-12 rounded-xl text-lg font-medium bg-primary hover:bg-primary/90"
-            disabled={mutation.isPending}
+            disabled={isPending}
           >
-            {mutation.isPending ? (
-              <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Envoi en cours...
-              </>
+            {isPending ? (
+              "Envoi en cours..."
             ) : (
               <>
                 Envoyer

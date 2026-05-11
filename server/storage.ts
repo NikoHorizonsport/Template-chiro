@@ -1,9 +1,4 @@
-import { db } from "./db";
-import { 
-  inquiries, testimonials, 
-  type InsertInquiry, type InsertTestimonial, type Testimonial 
-} from "@shared/schema";
-import { eq } from "drizzle-orm";
+import type { InsertInquiry, InsertTestimonial, Testimonial } from "@shared/schema";
 
 export interface IStorage {
   createInquiry(inquiry: InsertInquiry): Promise<void>;
@@ -11,19 +6,23 @@ export interface IStorage {
   createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial>;
 }
 
-export class DatabaseStorage implements IStorage {
+class InMemoryStorage implements IStorage {
+  private testimonials: Testimonial[] = [];
+  private nextId = 1;
+
   async createInquiry(inquiry: InsertInquiry): Promise<void> {
-    await db.insert(inquiries).values(inquiry);
+    console.log("[inquiry]", inquiry);
   }
 
   async getTestimonials(): Promise<Testimonial[]> {
-    return await db.select().from(testimonials);
+    return this.testimonials;
   }
 
   async createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial> {
-    const [newItem] = await db.insert(testimonials).values(testimonial).returning();
-    return newItem;
+    const item: Testimonial = { id: this.nextId++, ...testimonial };
+    this.testimonials.push(item);
+    return item;
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = new InMemoryStorage();
